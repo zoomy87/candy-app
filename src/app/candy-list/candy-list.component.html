@@ -1,0 +1,18 @@
+<div class="container">
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Quantity</th>
+      <th>Good?</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor= "let candy of candies">
+      <td>{{candy.name}}</td>
+      <td>{{candy.quantity}}</td>
+      <td>{{candy.good}}</td>
+    </tr>
+  </tbody>
+</table>
+</div>
