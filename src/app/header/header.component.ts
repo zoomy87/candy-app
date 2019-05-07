@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { CandyDataService } from '../candy-data.service';
+import { Candy } from '../candy';
 
 @Component({
   selector: 'app-header',
@@ -7,9 +9,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor() { }
+  candies: Candy[];
+
+  constructor(private candyDataService: CandyDataService) { }
 
   ngOnInit() {
+    this.candyDataService.getCandy().subscribe(c => (this.candies = c));
+    
   }
 
 }

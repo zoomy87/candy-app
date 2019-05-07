@@ -18,4 +18,9 @@ export class CandyListComponent implements OnInit {
     this.candyDataService.getCandy().subscribe(c => (this.candies = c));
   }
 
+  removeCandyType(candy: Candy){
+    this.candyDataService.removeCandyType(candy);
+    this.candyDataService.getCandy().subscribe(c => (this.candies = c));
+  }
+
 }

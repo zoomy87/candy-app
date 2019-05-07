@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { CandyDataService } from '../candy-data.service';
 import { Candy } from '../candy';
-// import { NgModel } from '@angular/forms';
+import { Router } from '@angular/router';
+//import { NgModel } from '@angular/forms';
 
 @Component({
   selector: 'app-candy-form',
@@ -12,7 +13,7 @@ export class CandyFormComponent implements OnInit {
 
   currentCandy: Candy = new Candy();
 
-  constructor(private candyDataService: CandyDataService) { }
+  constructor(private candyDataService: CandyDataService, private router: Router) { }
 
   addCandy(): void {
     this.candyDataService.addCandy(this.currentCandy);

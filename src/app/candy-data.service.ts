@@ -22,5 +22,10 @@ export class CandyDataService {
     this.candies.push(candy);
   }
 
+  removeCandyType(candy: Candy){
+    var index: number = this.candies.findIndex((c: Candy) => {return c=== candy});
+    this.candies.splice(index, 1);
+  }
+
   constructor() { }
 }
